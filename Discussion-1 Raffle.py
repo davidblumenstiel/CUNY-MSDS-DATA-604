@@ -53,8 +53,11 @@ for i in range(1000):
     tries.append(raffle(Ps, Pm, Pl, Ph, tickets))
 
 
+import statistics
 print("Total winnings from all tries: " + str(sum(tries)))
-print("Average winnings per try: " + str(sum(tries)/tickets))
+print("Average winnings per try: " + str(statistics.mean(tries)))
+print("Average winnings per ticket: " + str(statistics.mean(tries)/tickets))
+
 import matplotlib.pyplot as plt
 plt.plot(tries)
 plt.xlabel("Raffle Attempt")
